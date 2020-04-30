@@ -1,10 +1,18 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Northwind.Backoffice.Core.Entities
 {
-    public class Employee
+    public partial class Employees
     {
-        public int EmployeeID { get; set; }
+        public Employees()
+        {
+            EmployeeTerritories = new HashSet<EmployeeTerritories>();
+            InverseReportsToNavigation = new HashSet<Employees>();
+            Orders = new HashSet<Orders>();
+        }
+
+        public int EmployeeId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Title { get; set; }
@@ -20,6 +28,12 @@ namespace Northwind.Backoffice.Core.Entities
         public string Extension { get; set; }
         public byte[] Photo { get; set; }
         public string Notes { get; set; }
+        public int? ReportsTo { get; set; }
         public string PhotoPath { get; set; }
+
+        public virtual Employees ReportsToNavigation { get; set; }
+        public virtual ICollection<EmployeeTerritories> EmployeeTerritories { get; set; }
+        public virtual ICollection<Employees> InverseReportsToNavigation { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }
