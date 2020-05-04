@@ -3,12 +3,16 @@ version: '3.7'
 services:
   northwind.backoffice.web:
     image: ${DOCKER_REGISTRY-}northwindbackoffice
+    depends_on: 
+      - northwind.db.server
     build:
       context: .
       dockerfile: Northwind.Backoffice.Web/Dockerfile
 
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2017-latest
+  northwind.db.server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports: 
+      - "1433:1433"
     environment: 
       SA_PASSWORD: "P@ssw0rd!"
       ACCEPT_EULA: "Y"
