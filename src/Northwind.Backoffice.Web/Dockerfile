@@ -10,7 +10,6 @@ WORKDIR /src
 COPY Northwind.Backoffice.Web/Northwind.Backoffice.Web.csproj Northwind.Backoffice.Web/
 COPY Northwind.Backoffice.Core/Northwind.Backoffice.Core.csproj Northwind.Backoffice.Core/
 COPY Northwind.Backoffice.Infrastructure/Northwind.Backoffice.Infrastructure.csproj Northwind.Backoffice.Infrastructure/
-RUN dotnet restore "Northwind.Backoffice.Web/Northwind.Backoffice.Web.csproj"
 COPY . .
 WORKDIR "/src/Northwind.Backoffice.Web"
 RUN dotnet build "Northwind.Backoffice.Web.csproj" -c Release -o /app/build
