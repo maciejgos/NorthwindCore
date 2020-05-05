@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Northwind.Backoffice.Infrastructure.Data;
 
-namespace Northwind.Backoffice.Web.Data.Migrations
+namespace Northwind.Backoffice.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Northwind.Backoffice.Infrastructure.Data;
 
-namespace Northwind.Backoffice.Web.Data.Migrations
+namespace Northwind.Backoffice.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("00000000000000_CreateIdentitySchema")]
