@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Northwind.Backoffice.Web.Data
+namespace Northwind.Backoffice.Infrastructure.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

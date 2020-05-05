@@ -2,7 +2,7 @@
 using Northwind.Backoffice.Core.Entities;
 using System.Reflection;
 
-namespace Northwind.Backoffice.Infrastructure
+namespace Northwind.Backoffice.Infrastructure.Data
 {
     public partial class NorthwindContext : DbContext
     {
