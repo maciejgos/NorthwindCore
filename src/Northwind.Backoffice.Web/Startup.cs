@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Northwind.Backoffice.Infrastructure;
 using Northwind.Backoffice.Infrastructure.Data;
+using MediatR;
+using System.Reflection;
 
 namespace Northwind.Backoffice.Web
 {
@@ -31,6 +33,7 @@ namespace Northwind.Backoffice.Web
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddMediatR(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
