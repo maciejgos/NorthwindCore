@@ -8,6 +8,7 @@ using Northwind.Backoffice.Infrastructure;
 using Northwind.Backoffice.Infrastructure.Data;
 using MediatR;
 using System.Reflection;
+using Northwind.Backoffice.Web.Application;
 
 namespace Northwind.Backoffice.Web
 {
@@ -26,14 +27,13 @@ namespace Northwind.Backoffice.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructure(Configuration.GetConnectionString(ConnectionStringName));
-
+            services.AddApplication();
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddMediatR(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
