@@ -9,6 +9,7 @@ using Northwind.Backoffice.Infrastructure.Data;
 using MediatR;
 using System.Reflection;
 using Northwind.Backoffice.Web.Application;
+using Northwind.Backoffice.Web.Extensions;
 
 namespace Northwind.Backoffice.Web
 {
@@ -57,6 +58,8 @@ namespace Northwind.Backoffice.Web
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseRequestResponseLogging();
 
             app.UseEndpoints(endpoints =>
             {
