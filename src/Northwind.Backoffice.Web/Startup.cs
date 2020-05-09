@@ -10,6 +10,7 @@ using MediatR;
 using System.Reflection;
 using Northwind.Backoffice.Web.Application;
 using Northwind.Backoffice.Web.Extensions;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Northwind.Backoffice.Web
 {
@@ -35,6 +36,10 @@ namespace Northwind.Backoffice.Web
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddHealthChecks()
+                    .AddCheck("live", () => HealthCheckResult.Unhealthy("Application is not responding"))
+                    .AddDbContextCheck<NorthwindContext>("db", HealthStatus.Degraded, new[] { "ready" });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +72,14 @@ namespace Northwind.Backoffice.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
+                endpoints.MapHealthChecks("/health/ready", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions()
+                {
+                    Predicate = (check) => check.Tags.Contains("ready")
+                });
+                endpoints.MapHealthChecks("/health/live", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions()
+                {
+                    Predicate = _ => false
+                });
             });
         }
     }
