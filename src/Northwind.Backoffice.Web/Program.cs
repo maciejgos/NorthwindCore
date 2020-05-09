@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -20,6 +15,12 @@ namespace Northwind.Backoffice.Web
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureLogging(configuration => 
+                    {
+                        configuration.ClearProviders();
+                        configuration.AddConsole();
+                        configuration.AddDebug();
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }
