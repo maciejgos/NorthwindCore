@@ -4,9 +4,9 @@ using Northwind.Backoffice.Core.Entities;
 
 namespace Northwind.Backoffice.Infrastructure.Configuration
 {
-    internal class ProductsConfiguration : IEntityTypeConfiguration<Products>
+    internal class ProductsConfiguration : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Products> builder)
+        public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(e => e.ProductId);
 
