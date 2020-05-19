@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Northwind.Backoffice.Web.Application.Dtos;
 using Northwind.Backoffice.Web.Application.Handlers;
-using Northwind.Backoffice.Web.Application.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

@@ -1,6 +1,6 @@
 ﻿using Northwind.Backoffice.Core.Entities;
 
-namespace Northwind.Backoffice.Web.Application.ViewModels
+namespace Northwind.Backoffice.Web.Application.Dtos
 {
     public class ProductDto
     {

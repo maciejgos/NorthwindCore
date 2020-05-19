@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Northwind.Backoffice.Infrastructure.Data;
-using Northwind.Backoffice.Web.Application.ViewModels;
+using Northwind.Backoffice.Web.Application.Dtos;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
