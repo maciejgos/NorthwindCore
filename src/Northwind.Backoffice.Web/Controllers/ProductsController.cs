@@ -1,11 +1,13 @@
-﻿using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Northwind.Backoffice.Web.Application.Handlers;
+using Northwind.Backoffice.Web.Application.ViewModels;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Northwind.Backoffice.Web.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : BaseApiController
     {
         private readonly IMediator _mediator;
 
@@ -14,12 +16,13 @@ namespace Northwind.Backoffice.Web.Controllers
             _mediator = mediator;
         }
 
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> Get()
         {
             var request = new GetAllProductsRequest();
             var response = await _mediator.Send(request);
 
-            return View(response);
+            return new OkObjectResult(response);
         }
     }
 }
