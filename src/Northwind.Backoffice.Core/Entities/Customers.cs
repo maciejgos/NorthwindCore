@@ -8,7 +8,7 @@ namespace Northwind.Backoffice.Core.Entities
         public Customers()
         {
             CustomerCustomerDemo = new HashSet<CustomerCustomerDemo>();
-            Orders = new HashSet<Orders>();
+            Orders = new HashSet<Order>();
         }
 
         public string CustomerId { get; set; }
@@ -24,6 +24,6 @@ namespace Northwind.Backoffice.Core.Entities
         public string Fax { get; set; }
 
         public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

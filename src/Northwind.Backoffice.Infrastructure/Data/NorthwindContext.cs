@@ -29,7 +29,7 @@ namespace Northwind.Backoffice.Infrastructure.Data
         public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<OrderDetailsExtended> OrderDetailsExtended { get; set; }
         public virtual DbSet<OrderSubtotals> OrderSubtotals { get; set; }
-        public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrdersQry> OrdersQry { get; set; }
         public virtual DbSet<ProductSalesFor1997> ProductSalesFor1997 { get; set; }
         public virtual DbSet<Product> Products { get; set; }

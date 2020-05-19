@@ -9,7 +9,7 @@ namespace Northwind.Backoffice.Core.Entities
         {
             EmployeeTerritories = new HashSet<EmployeeTerritories>();
             InverseReportsToNavigation = new HashSet<Employees>();
-            Orders = new HashSet<Orders>();
+            Orders = new HashSet<Order>();
         }
 
         public int EmployeeId { get; set; }
@@ -34,6 +34,6 @@ namespace Northwind.Backoffice.Core.Entities
         public virtual Employees ReportsToNavigation { get; set; }
         public virtual ICollection<EmployeeTerritories> EmployeeTerritories { get; set; }
         public virtual ICollection<Employees> InverseReportsToNavigation { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
