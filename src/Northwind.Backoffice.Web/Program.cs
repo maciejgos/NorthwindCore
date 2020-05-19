@@ -15,7 +15,7 @@ namespace Northwind.Backoffice.Web
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.ConfigureLogging(configuration => 
+                    webBuilder.ConfigureLogging(configuration =>
                     {
                         configuration.ClearProviders();
                         configuration.AddConsole();

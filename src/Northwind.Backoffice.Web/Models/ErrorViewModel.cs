@@ -1,5 +1,3 @@
-using System;
-
 namespace Northwind.Backoffice.Web.Models
 {
     public class ErrorViewModel

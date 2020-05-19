@@ -1,16 +1,14 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Northwind.Backoffice.Infrastructure;
 using Northwind.Backoffice.Infrastructure.Data;
-using MediatR;
-using System.Reflection;
 using Northwind.Backoffice.Web.Application;
 using Northwind.Backoffice.Web.Extensions;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Northwind.Backoffice.Web
 {
