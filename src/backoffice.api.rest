@@ -3,3 +3,6 @@ GET https://localhost/api/products
 
 ### Get list of orders
 GET https://localhost/api/orders
+
+### Get list of customers
+GET https://localhost/api/customers
