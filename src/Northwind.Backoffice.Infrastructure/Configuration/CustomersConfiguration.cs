@@ -4,9 +4,9 @@ using Northwind.Backoffice.Core.Entities;
 
 namespace Northwind.Backoffice.Infrastructure.Configuration
 {
-    internal class CustomersConfiguration : IEntityTypeConfiguration<Customers>
+    internal class CustomersConfiguration : IEntityTypeConfiguration<Customer>
     {
-        public void Configure(EntityTypeBuilder<Customers> builder)
+        public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasKey(e => e.CustomerId);
 

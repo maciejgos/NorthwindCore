@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Backoffice.Web.Application.Handlers
 {
-    public class GetAllCustomersRequestHandler : IRequestHandler<GetAllCustomersRequest, IEnumerable<Customers>>
+    public class GetAllCustomersRequestHandler : IRequestHandler<GetAllCustomersRequest, IEnumerable<Customer>>
     {
         private readonly NorthwindContext _context;
 
@@ -18,7 +18,7 @@ namespace Northwind.Backoffice.Web.Application.Handlers
             _context = context;
         }
 
-        public Task<IEnumerable<Customers>> Handle(GetAllCustomersRequest request, CancellationToken cancellationToken)
+        public Task<IEnumerable<Customer>> Handle(GetAllCustomersRequest request, CancellationToken cancellationToken)
         {
             var customers = _context.Customers.AsEnumerable();
 
@@ -26,7 +26,7 @@ namespace Northwind.Backoffice.Web.Application.Handlers
         }
     }
 
-    public class GetAllCustomersRequest : IRequest<IEnumerable<Customers>>
+    public class GetAllCustomersRequest : IRequest<IEnumerable<Customer>>
     {
 
     }

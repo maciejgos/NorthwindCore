@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Northwind.Backoffice.Core.Entities
 {
-    public partial class Customers
+    public partial class Customer
     {
-        public Customers()
+        public Customer()
         {
             CustomerCustomerDemo = new HashSet<CustomerCustomerDemo>();
             Orders = new HashSet<Order>();

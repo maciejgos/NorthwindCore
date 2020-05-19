@@ -22,7 +22,7 @@ namespace Northwind.Backoffice.Infrastructure.Data
         public virtual DbSet<CustomerAndSuppliersByCity> CustomerAndSuppliersByCity { get; set; }
         public virtual DbSet<CustomerCustomerDemo> CustomerCustomerDemo { get; set; }
         public virtual DbSet<CustomerDemographics> CustomerDemographics { get; set; }
-        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<EmployeeTerritories> EmployeeTerritories { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Invoices> Invoices { get; set; }

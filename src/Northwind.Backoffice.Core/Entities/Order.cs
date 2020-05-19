@@ -25,7 +25,7 @@ namespace Northwind.Backoffice.Core.Entities
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
 
-        public virtual Customers Customer { get; set; }
+        public virtual Customer Customer { get; set; }
         public virtual Employees Employee { get; set; }
         public virtual Shippers ShipViaNavigation { get; set; }
         public virtual ICollection<OrderDetails> OrderDetails { get; set; }
