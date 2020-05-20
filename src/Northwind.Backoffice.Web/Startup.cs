@@ -32,8 +32,10 @@ namespace Northwind.Backoffice.Web
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorPagesOptions(options =>
+            {
+                options.RootDirectory = "/Views";
+            });
 
             services.AddHealthChecks()
                     .AddCheck("live", () => HealthCheckResult.Unhealthy("Application is not responding"))
@@ -50,7 +52,7 @@ namespace Northwind.Backoffice.Web
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
