@@ -1,8 +1,8 @@
 ### Get list of products
-GET https://localhost/api/products
+GET https://localhost:5001/api/products
 
 ### Get list of orders
-GET https://localhost/api/orders
+GET https://localhost:5001/api/orders
 
 ### Get list of customers
-GET https://localhost/api/customers
+GET https://localhost:5001/api/customers
