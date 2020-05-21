@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.128
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Backoffice.Web", "Northwind.Backoffice.Web\Northwind.Backoffice.Web.csproj", "{BF380E58-D492-4F66-AF46-7E50A1E3B654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Backoffice.Web", "Northwind.Backoffice.Web\Northwind.Backoffice.Web.csproj", "{BF380E58-D492-4F66-AF46-7E50A1E3B654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Backoffice.Core", "Northwind.Backoffice.Core\Northwind.Backoffice.Core.csproj", "{C44F2902-E160-4363-997F-147AC0521522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Backoffice.Core", "Northwind.Backoffice.Core\Northwind.Backoffice.Core.csproj", "{C44F2902-E160-4363-997F-147AC0521522}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Backoffice.Infrastructure", "Northwind.Backoffice.Infrastructure\Northwind.Backoffice.Infrastructure.csproj", "{730096FD-4069-436F-B968-1571A5777076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Backoffice.Infrastructure", "Northwind.Backoffice.Infrastructure\Northwind.Backoffice.Infrastructure.csproj", "{730096FD-4069-436F-B968-1571A5777076}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Backoffice.Core.Tests", "Northwind.Backoffice.Core.Tests\Northwind.Backoffice.Core.Tests.csproj", "{2B7D2D6A-82C0-4E5E-88F2-18691F16165B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Northwind.Backoffice.Core.Tests", "Northwind.Backoffice.Core.Tests\Northwind.Backoffice.Core.Tests.csproj", "{2B7D2D6A-82C0-4E5E-88F2-18691F16165B}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9C131B94-2A33-4985-8203-A4E0BB89543E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Northwind.Backoffice.Api", "Northwind.Backoffice.Api\Northwind.Backoffice.Api.csproj", "{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BF380E58-D492-4F66-AF46-7E50A1E3B654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +85,23 @@ Global
 		{9C131B94-2A33-4985-8203-A4E0BB89543E}.Release|x64.Build.0 = Release|Any CPU
 		{9C131B94-2A33-4985-8203-A4E0BB89543E}.Release|x86.ActiveCfg = Release|Any CPU
 		{9C131B94-2A33-4985-8203-A4E0BB89543E}.Release|x86.Build.0 = Release|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Debug|x64.Build.0 = Debug|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Debug|x86.Build.0 = Debug|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Release|x64.ActiveCfg = Release|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Release|x64.Build.0 = Release|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C56081A-E5F7-41C7-83FD-64A578A1BEC9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA6B0DC4-DEF9-4A16-870F-F6C0FABFFC09}
 	EndGlobalSection
 EndGlobal
