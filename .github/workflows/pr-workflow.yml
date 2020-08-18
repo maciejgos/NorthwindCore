@@ -21,3 +21,5 @@ jobs:
       run: dotnet build --configuration Release --no-restore src/Northwind.sln
     - name: Test
       run: dotnet test --no-restore --verbosity normal src/Northwind.sln
+    - name: Echo
+      run: echo $path
