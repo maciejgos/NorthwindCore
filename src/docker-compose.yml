@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  northwind.backoffice.web:
+    image: ${DOCKER_REGISTRY-}northwindbackoffice-web
+    depends_on: 
+      - northwind.backoffice.api
+    build:
+      context: .
+      dockerfile: Northwind.Backoffice.Web/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
+
+  northwind.backoffice.api:
+    image: ${DOCKER_REGISTRY-}northwindbackoffice-api
+    depends_on: 
+      - northwind.db.server
+    build:
+      context: .
+      dockerfile: Northwind.Backoffice.Api/Dockerfile
+    ports:
+      - 5000:80
+      - 5001:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
+
+  northwind.db.server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports: 
+      - "1433:1433"
+    environment: 
+      SA_PASSWORD: "P@ssw0rd!"
+      ACCEPT_EULA: "Y"
