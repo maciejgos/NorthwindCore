@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy Infrastructure
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -18,13 +18,24 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}   
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+          az group create --name ${{ secrets.RESOURCE_GROUP_NAME }} --location "westeurope"    
+    
     - name: ARM deployment
       uses: whiteducksoftware/azure-arm-action@v3.2
       with:
         # Paste output of `az ad sp create-for-rbac -o json` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         # Provide the name of a resource group.
-        resourceGroupName: northwind-test-rg
+        resourceGroupName: ${{ secrets.RESOURCE_GROUP_NAME }}
         # Specify the path to the Azure Resource Manager template.
         templateLocation: src/infrastructure/azuredeploy.json
         # Specifies the name of the resource group deployment to create.
