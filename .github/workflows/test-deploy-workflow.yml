@@ -27,6 +27,6 @@ jobs:
       with:
         # Specify the script here
         inlineScript:
-          resourceGroupName="northwind-armtest-rg"
+          resourceGroupName="northwind-test-rg"
           az group create --name $resourceGroupName --location "westeurope"
           az deployment group create -g $resourceGroupName --template-file .src/infrastructure/azuredeploy.json --parameters .src/infrastructure/azuredeploy.parameters.json
