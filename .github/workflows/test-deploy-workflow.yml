@@ -23,10 +23,10 @@ jobs:
         # Paste output of `az ad sp create-for-rbac -o json` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         # Provide the name of a resource group.
-        resourceGroupName: "northwind-test-rg"
+        resourceGroupName: northwind-test-rg
         # Specify the path to the Azure Resource Manager template.
         templateLocation: src/infrastructure/azuredeploy.json
         # Specifies the name of the resource group deployment to create.
-        deploymentName: "Initial"
+        deploymentName: Initial
         # Specify either path to the Azure Resource Manager parameters file or pass them as 'key1=value1;key2=value2;...'.
         parameters: src/infrastructure/azuredeploy.parameters.json
