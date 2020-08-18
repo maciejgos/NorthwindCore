@@ -16,8 +16,8 @@ jobs:
       with:
         dotnet-version: 3.1.401
     - name: Install dependencies
-      run: dotnet restore src/Northwind.sln
+      run: dotnet restore ./src/Northwind.sln
     - name: Build
-      run: dotnet build --configuration Release --no-restore src/Northwind.sln
+      run: dotnet build --configuration Release --no-restore ./src/Northwind.sln
     - name: Test
-      run: dotnet test --no-restore --verbosity normal src/Northwind.sln
+      run: dotnet test --no-restore --verbosity normal ./src/Northwind.sln
