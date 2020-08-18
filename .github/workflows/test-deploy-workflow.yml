@@ -17,16 +17,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Azure Login
-      uses: Azure/login@v1.1
+    - name: Azure Resource Manager (ARM) Template Deployment
+      uses: whiteducksoftware/azure-arm-action@v3.2
       with:
-        # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+        # Paste output of `az ad sp create-for-rbac -o json` as value of secret variable: AZURE_CREDENTIALS
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Azure CLI Action
-      uses: Azure/cli@v1.0.0
-      with:
-        # Specify the script here
-        inlineScript:
-          resourceGroupName="northwind-test-rg"
-          az group create --name $resourceGroupName --location "westeurope"
-          az deployment group create -g $resourceGroupName --template-file .src/infrastructure/azuredeploy.json --parameters .src/infrastructure/azuredeploy.parameters.json
+        # Provide the name of a resource group.
+        resourceGroupName: "northwind-test-rg"
+        # Specify the path to the Azure Resource Manager template.
+        templateLocation: src/infrastructure/azuredeploy.json
+        # Specifies the name of the resource group deployment to create.
+        deploymentName: "Initial"
+        # Specify either path to the Azure Resource Manager parameters file or pass them as 'key1=value1;key2=value2;...'.
+        parameters: src/infrastructure/azuredeploy.parameters.json
