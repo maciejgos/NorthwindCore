@@ -2,5 +2,20 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "sqlAdministratorLogin": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "sqlAdministratorLoginPassword": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "databaseName": {
+            "value": "" // TODO: Fill in parameter value
+        },
+        "skuName": {
+            "value": "F1"
+        },
+        "skuCapacity": {
+            "value": 1
+        }
     }
 }
