@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "sqlAdministratorLogin": {
-            "value": "" // TODO: Fill in parameter value
+            "value": "northwindadmin"
         },
         "sqlAdministratorLoginPassword": {
-            "value": "" // TODO: Fill in parameter value
+            "value": "P@ssw0rd!"
         },
         "databaseName": {
-            "value": "" // TODO: Fill in parameter value
+            "value": "northwind"
         },
         "skuName": {
             "value": "F1"
