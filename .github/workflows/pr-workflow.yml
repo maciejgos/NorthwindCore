@@ -11,15 +11,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.401
-    - name: Install dependencies
-      run: dotnet restore src/Northwind.sln
-    - name: Build
-      run: dotnet build --configuration Release --no-restore src/Northwind.sln
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal src/Northwind.sln
     - name: Echo
       run: echo $path
