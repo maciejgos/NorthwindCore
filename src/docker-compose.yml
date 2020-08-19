@@ -8,15 +8,16 @@ services:
     build:
       context: .
       dockerfile: Northwind.Backoffice.Web/Dockerfile
+    ports:
+      - 80:80
+      - 443:443
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
-    ports:
-      - "80:80"
-      - "443:443"
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
     volumes:
-      - ~/.aspnet/https:/root/.aspnet/https:ro
-      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+      - ~/.aspnet/https:/https:ro
 
   northwind.backoffice.api:
     image: ${DOCKER_REGISTRY-}northwindbackoffice-api
@@ -25,12 +26,16 @@ services:
     build:
       context: .
       dockerfile: Northwind.Backoffice.Api/Dockerfile
-    environment:
-        - ASPNETCORE_ENVIRONMENT=Development
-        - ASPNETCORE_URLS=https://+:443;http://+:80      
     ports:
-      - "5000:80"
-      - "5001:443"
+      - 5000:80
+      - 5001:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
 
   northwind.db.server:
     image: mcr.microsoft.com/mssql/server:2019-latest
