@@ -16,6 +16,12 @@
         },
         "skuCapacity": {
             "value": 1
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "environment": {
+            "value": "test"
         }
     }
 }

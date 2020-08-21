@@ -56,12 +56,24 @@
             "metadata": {
                 "description": "Location for all resources."
             }
+        },
+        "environment": {
+            "type": "string",
+            "defaultValue": "test",
+            "allowedValues": [
+                "dev",
+                "test",
+                "prod"
+            ],
+            "metadata": {
+                "description": "Type of environment (Development, Test/Staging, Production)"
+            }
         }
     },
     "variables": {
         "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",
         "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]",
-        "sqlserverName": "[concat('sqlserver', uniqueString(resourceGroup().id))]"
+        "sqlserverName": "[concat('sqlserver-', parameters('environment'), '001')]"
     },
     "resources": [
         {
