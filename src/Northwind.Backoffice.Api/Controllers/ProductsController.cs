@@ -11,16 +11,19 @@ namespace Northwind.Backoffice.Api.Controllers
     public class ProductsController : BaseApiController
     {
         private readonly IMediator _mediator;
-        private readonly ILogger _logger;
+        private readonly ILogger<ProductsController> _logger;
 
-        public ProductsController(IMediator mediator)
+        public ProductsController(IMediator mediator, ILogger<ProductsController> logger)
         {
             _mediator = mediator;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDto>>> Get()
         {
+            _logger.LogInformation("Request all products");
+
             var request = new GetAllProductsRequest();
             var response = await _mediator.Send(request);
 
