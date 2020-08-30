@@ -8,7 +8,9 @@ namespace Northwind.Backoffice.Infrastructure
     {
         public static void AddInfrastructure(this IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<NorthwindContext>(options => {
+                options.UseSqlServer(connectionString, providerOptions => providerOptions.EnableRetryOnFailure(10));
+            });
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
         }
     }
