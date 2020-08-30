@@ -24,6 +24,8 @@ namespace Northwind.Backoffice.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_INSTRUMENTATIONKEY"]);
+         
             services.AddInfrastructure(Configuration.GetConnectionString(ConnectionStringName));
             services.AddApplication();
 
